@@ -1,27 +1,50 @@
-import React from 'react'
-import Container from './Styles';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router';
+import api from '../../api/api.config';
+import AuthForm from '../../components/AuthForm';
 
- function Signup() {
-    return (
-        <Container>
-           
-               <section>
-                   <h1>MyPic</h1>
-                   <h3>Guarde Aquilo <br></br>que é importante <br></br>para você...</h3>
-                   <p>suas fotos seguras e disponiveis em varios<br></br> dispositivos sempre quando você precisar</p>
-                   </section>
-               <div>
-                   <h4>Login</h4>
-                   <form>
-                   <input type='text' placeholder ='username'></input>
-                   <input type='text' placeholder ='password'></input>
-                   </form>
 
-               </div>
+
+const INITIAL_FORM = {
+    username: "",
+    password: ""
+}
+
+
+const Signup = () =>{
+
+    
+    const [ formValues, setFormValues ] = useState({...INITIAL_FORM})
+
+    const history =useHistory()
+
+    const handleChange = ({target: {name, value}}) => {
+        setFormValues({...formValues, [name]: value })
+    };
+
+    const handleSubmit = async (e) =>{
+        e.preventDefault()
+        try {
+           await api.post('/auth/signup', formValues)
+           history.push('/login')
+        } catch (error) {
+            console.error(error)
             
-        </Container>
-     
+        }
+
+    }
+
+
+    return(
+       <div>
+           <AuthForm values= { formValues } handleSubmit={handleSubmit} handleChange={handleChange} buttonlabel='signup'/>
+       </div>
+
     )
+
 }
 
 export default Signup;
+
+
+

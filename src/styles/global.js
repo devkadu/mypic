@@ -1,27 +1,26 @@
+import { createGlobalStyle } from "styled-components";
+import px2vw from "../utils/px2vw";
 
-import { createGlobalStyle } from 'styled-components';
+export const Global = createGlobalStyle`
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+ 
+  :root {
+      font-size: ${px2vw(24)};
 
-const GlobalStyle = createGlobalStyle`
+      @media (min-width: 768px) {
+        font-size: ${px2vw(18)};
+      }
 
-   *{
-       margin: 0;
-       padding: 0;
-       outline: 0;
-       box-sizing: border-box;
-       font-family: 'Poppins', sans-serif;
-       
-   }
+      @media (min-width: 1024px) {
+        font-size: ${px2vw(16)};
+      }
+    }
+`;
 
-   body {
-       text-rendering: optimizeLegibility;
-       -webkit-font-smoothing: antialiased;
-   }
-
-   html , body , #root{
-       height: 100%;
-   }
-   `;
-
-   export default GlobalStyle;
-
+export default Global;
 
