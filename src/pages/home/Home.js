@@ -1,10 +1,14 @@
-import { useState, useEffect } from "react"
+import React from "react"
+import { Full, Profile } from "./styles"
 
 
 export default function Home() {
     return (
-        <div>
+        <Full>
+            <Profile>
+                <h1>myPic</h1>
+            </Profile>
             
-        </div>
+        </Full>
     )
 }

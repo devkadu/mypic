@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
 import api from '../../api/api.config';
-import AuthForm from '../../components/AuthForm';
+import AuthForm from '../../components/authentication/AuthForm';
 
 
 
@@ -37,7 +37,7 @@ const Signup = () =>{
 
     return(
        <div>
-           <AuthForm values= { formValues } handleSubmit={handleSubmit} handleChange={handleChange} buttonlabel='signup'/>
+           <AuthForm values= { formValues } handleSubmit={handleSubmit} handleChange={handleChange} buttonlabel='Sign up' loginmassage='Create an acconut' signupmessage='/login' linkmassage='Login'/>
        </div>
 
     )

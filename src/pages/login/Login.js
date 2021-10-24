@@ -1,6 +1,6 @@
 import React from "react";
 import api from "../../api/api.config";
-import AuthForm from "../../components/AuthForm";
+import AuthForm from '../../components/authentication/AuthForm';
 import { useState } from "react";
 
 const INITIAL_FORM = {
@@ -32,7 +32,7 @@ const Login = (props) => {
     }
     return(
         <div>
-            <AuthForm values= { formValues } handleSubmit={handleSubmit} handleChange={handleChange} buttonlabel='login'/>
+            <AuthForm values= { formValues } handleSubmit={handleSubmit} handleChange={handleChange} buttonlabel='Log in' loginmassage='Login' signupmessage='/signup' linkmassage="create on account"/>
         </div>
 
     );
