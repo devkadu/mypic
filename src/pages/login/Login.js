@@ -21,6 +21,7 @@ const Login = (props) => {
             const result = await api.post('auth/login', formValues);
             console.log(result)
             localStorage.setItem('token', result.data.token)
+            localStorage.setItem('user', result.data.user.id)
             props.history.push('/')
 
            
