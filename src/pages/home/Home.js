@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import api from "../../api/api.config"
-import { ProfilePic, Full, Profile, HeaderProfile } from "./styles";
+import { ProfilePic, Full, Profile, HeaderProfile, PictureCard } from "./styles";
+
 
 
 const Home = () => {
@@ -15,13 +16,24 @@ const Home = () => {
         try {
             const result = await api.get(`/user/${userId}`);
             setUser(result.data);
+            console.log(result)
         } catch (error) {
             console.error(error.response);
         }
     };
 
     return (
+
+
         <Full>
+           
+
+
+
+        
+           
+         
+
             <Profile>
                 <h1>myPic</h1>
                 <HeaderProfile>

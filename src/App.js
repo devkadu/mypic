@@ -4,6 +4,7 @@ import Login from './pages/login/Login';
 import Signup from './pages/Signup/Signup';
 import GlobalStyle from './styles/global';
 import UploadProfilePic from './components/Upload/UploadProfilePic.js';
+import UploadPicture from './components/Upload/UploadPicture';
 
 
 
@@ -19,6 +20,7 @@ function App() {
       <Route exact path='/Login' render={(props) => <Login {...props} />} />
       <Route exact path='/' render={(props) => <Home {...props} />} />
       <Route exact path='/UploadProfilePic' render={(props) => <UploadProfilePic {...props} />} />
+      <Route exact path='/UploadPicture' render={(props) => <UploadPicture {...props} />} />
       
      
       
