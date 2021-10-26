@@ -54,11 +54,7 @@ const Home = () => {
             </HomeCard>
 
             
-                {user.pictures.map((picture) => 
-                <p key={picture.id}>
-                    {picture.title}
-                    </p>
-                )}
+                
             
 
         </Full>
