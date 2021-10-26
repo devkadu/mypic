@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import api from "../../api/api.config"
-import { ProfilePic, Full, Profile, HeaderProfile, PictureCard } from "./styles";
+import SearchBox from "../../components/SearchBox";
+import { ProfilePic, Full, Profile, HeaderProfile, PictureCard, HomeCard, Header } from "./styles";
+import {BsBoxArrowLeft} from 'react-icons/bs';
 
 
 
@@ -40,7 +43,23 @@ const Home = () => {
             <ProfilePic src={user.profilePicture} alt=""/>
             <p>{user.username}</p>
                 </HeaderProfile>
+                <Link to='/logout'><BsBoxArrowLeft/> Logout</Link>
             </Profile>
+
+            <HomeCard>
+                <Header>
+                    <SearchBox/>
+                    <Link to='/about'>About</Link>
+                    </Header>
+            </HomeCard>
+
+            
+                {user.pictures.map((picture) => 
+                <p key={picture.id}>
+                    {picture.title}
+                    </p>
+                )}
+            
 
         </Full>
         

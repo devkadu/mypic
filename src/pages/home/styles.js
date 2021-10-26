@@ -3,16 +3,7 @@ import styled from "styled-components";
 export const Full = styled.div`
     background-color: #787CBC;
     height: 100vh;
-
-`;
-
-export const PictureCard = styled.div`
-
-        display: grid;
-        grid-template-columns: repeat(4. 1fr);
-        gap: 10px;
-   
-  
+    display: flex;
 
 `;
 
@@ -25,30 +16,66 @@ export const Profile = styled.div`
 
     h1{
         color: white;
-        padding: 10% 30%;
+        padding: 16% 30%;
+        font-size: 200%;
     }
 
+    a{
+        color: white;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        margin-top: 50vh;
+    }
+
+`;
+
+export const HomeCard = styled.div`
+
+       
+        
+        width: 100%;
+        height: auto;
+
+`;
+
+export const Header = styled.div`
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-right: 10%;
+
+      a{
+        color: white;
+        font-size: 150%;
+        text-decoration: none;
+        font-weight: bold;
+    }
 `;
 
 export const HeaderProfile = styled.div`
 
     display: flex;
+    margin-top: 80px;
     align-items: center;
-    margin-top: 50px;
     
 
 p{
     color: white;
     font-size: 20px;
     font-weight: 300;
-    padding: 20px;
+    padding-left: 2px;
 }
 
 img{
     display: block;
-    width: 20%;
+    width: 30%;
     clip-path: circle();
-    margin-left: 35px;
+    margin-left: 18%;
     
     
    
