@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import api from "../../api/api.config"
 import SearchBox from "../../components/SearchBox";
-import { ProfilePic, Full, Profile, HeaderProfile, PictureCard, HomeCard, Header } from "./styles";
-import {BsBoxArrowLeft} from 'react-icons/bs';
+import { ProfilePic, Full, Profile, HeaderProfile, HomeCard, Header } from "./styles";
+
 
 
 
@@ -13,6 +13,7 @@ const Home = () => {
 
     useEffect(() => {
         getUsers();
+
     }, []);
 
     const getUsers = async () => {
@@ -28,14 +29,7 @@ const Home = () => {
     return (
 
 
-        <Full>
-           
-
-
-
-        
-           
-         
+        <Full>     
 
             <Profile>
                 <h1>myPic</h1>
@@ -43,7 +37,7 @@ const Home = () => {
             <ProfilePic src={user.profilePicture} alt=""/>
             <p>{user.username}</p>
                 </HeaderProfile>
-                <Link to='/logout'><BsBoxArrowLeft/> Logout</Link>
+                
             </Profile>
 
             <HomeCard>
