@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
 import api from '../../api/api.config';
+import Sidebar from '../Sidebar';
+
 
 export default function UploadPicture() {
     const [image, setImage] = useState('');
+
+   
 
     const uploadImage = async e => {
         e.preventDefault()
@@ -35,13 +39,7 @@ export default function UploadPicture() {
 
     return (
         <div>
-            <h1>UploadPicture</h1>
-            <form onSubmit={uploadImage}>
-                <label>image</label>
-                <input type='file' name='image' onChange={e => setImage(e.target.files[0])}/>
-                <button type='submit'>Save</button>
-            </form>
-            
+            <Sidebar values={ image } uploadImage={uploadImage} setImage={setImage}/>
         </div>
     )
 }

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import api from "../../api/api.config"
-import SearchBox from "../../components/SearchBox";
-import { ProfilePic, Full, Profile, HeaderProfile, HomeCard, Header } from "./styles";
+import Header from "../../components/Header";
+import Sidebar from "../../components/Sidebar";
+import { Full} from "./styles";
 
 
 
@@ -14,6 +14,7 @@ const Home = () => {
     useEffect(() => {
         getUsers();
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const getUsers = async () => {
@@ -27,32 +28,10 @@ const Home = () => {
     };
 
     return (
-
-
-        <Full>     
-
-            <Profile>
-                <h1>myPic</h1>
-                <HeaderProfile>
-            <ProfilePic src={user.profilePicture} alt=""/>
-            <p>{user.username}</p>
-                </HeaderProfile>
-                
-            </Profile>
-
-            <HomeCard>
-                <Header>
-                    <SearchBox/>
-                    <Link to='/about'>About</Link>
-                    </Header>
-            </HomeCard>
-
-            
-                
-            
-
+        <Full>
+            <Sidebar/> 
+            <Header/>
         </Full>
-        
     );
 };
 
