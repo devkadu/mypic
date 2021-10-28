@@ -31,7 +31,10 @@ const Home = () => {
         <Full>
             <Sidebar/> 
             <Header/>
+
+          
         </Full>
+        
     );
 };
 

@@ -18,7 +18,7 @@ import { Menu, OpitionsArea, ProfileArea } from './style'
 
             <form onSubmit={uploadImage}>
             <MdAddToPhotos/>
-            <label for="pictures"> new Picture</label>
+            <label > new Picture</label>
             <input type='file' name='pictures' id='pictures' onChange={e => setImage(e.target.files[0])}/>
         
             </form>
