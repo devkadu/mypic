@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import api from '../../api/api.config';
-import Sidebar from '../Sidebar';
+import { UploadPic } from './style';
 
 
 export default function UploadPicture() {
@@ -38,15 +38,20 @@ export default function UploadPicture() {
 
 
     return (
-        <div>
+        
+
+            <UploadPic>
             
-               <h1>uploadProfilePic</h1>
-            <form onSubmit={uploadImage}>
-                <label>image</label>
-                <input type='file' name='image' onChange={e => setImage(e.target.files[0])} />
-                <button type='submit'>Save</button>
-            </form>
+         <form onSubmit={uploadImage}>
+             <label for='image'>Upload Image</label>
+             <input type='file' name='image' id='image' onChange={e => setImage(e.target.files[0])} />
             
-        </div>
+         </form>
+
+            </UploadPic>
+
+
+        
+            
     )
 }

@@ -28,10 +28,13 @@ export default function Galery() {
 
         return(
           <GaleryPic>
-                {user.pictures.map((pictures) => (
-                 <><Link to={`/pictures/${pictures._id}`} /><img src={pictures.url} alt={pictures.title} /></> 
+               {user.pictures.map((picture) =>(
+                    <div>
+                       <Link to={`/picture/${user.picture_id}`}/> <img src={picture.url} alt={picture.title}/>
+                    </div>
 
-             ))}
+                ))}
+               
 
            
           </GaleryPic>

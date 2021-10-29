@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { NavBar, Profile } from './style';
+import { NavBar, Profile, Buttons } from './style';
 import api from '../../api/api.config';
+import UploadPicture from '../Upload/UploadPicture';
+import UploadProfilePic from '../Upload/UploadProfilePic';
 
 
  function Sidebar(uploadImage, setImage) {
@@ -36,7 +38,10 @@ import api from '../../api/api.config';
                    <img src={user.profilePicture} alt=""/>
                    <p>{user.username}</p>
                </Profile>
-
+               <Buttons>
+               <UploadPicture/>
+               <UploadProfilePic/>
+               </Buttons>
                
             
            </NavBar>

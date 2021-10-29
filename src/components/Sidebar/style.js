@@ -21,7 +21,7 @@ export const NavBar = styled.div`
     }
 
     h1{
-        margin-top: -125%;
+        margin-top: -84%;
         font-size: 200%;
     }
 
@@ -30,7 +30,7 @@ export const NavBar = styled.div`
 export const Profile = styled.div`
     width: 100%;
     height: 15%;
-    margin-top: -95%;
+    margin-top: -50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,5 +45,12 @@ export const Profile = styled.div`
         color: white;
         padding: 10px;
     }
+
+`;
+
+export const Buttons = styled.div`
+    display: flex;
+    margin-top: -80%;
+    
 
 `;
