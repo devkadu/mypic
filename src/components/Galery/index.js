@@ -3,6 +3,19 @@ import { Link } from 'react-router-dom';
 import api from '../../api/api.config';
 import { GaleryPic } from './style'
 
+
+function List({ user, fallback }) {
+    if (!user || user.length === 0) {
+      return fallback;
+    } else {
+      return user.pictures.map(item => {
+        return <div key={item.id}><img src={item.url} alt={item.title}/></div>;
+      });
+    }
+  }
+
+
+
 export default function Galery() {
 
 
@@ -28,13 +41,7 @@ export default function Galery() {
 
         return(
           <GaleryPic>
-               {user.pictures.map((picture) =>(
-                    <div>
-                       <Link to={`/picture/${user.picture_id}`}/> <img src={picture.url} alt={picture.title}/>
-                    </div>
-
-                ))}
-               
+           <List user={user} fallback={"Loading..."} />
 
            
           </GaleryPic>
