@@ -25,8 +25,8 @@ export default function UploadPicture() {
         await api.post('/picture', newdata, headers).then((Response) =>{
             console.log(Response);
         }).catch((err) => {
-            if(err.response){
-                console.log(err.response);
+            if(err.Response){
+                console.log(err.Response);
 
             } else {
             console.log('tente mais tarde')
@@ -39,7 +39,14 @@ export default function UploadPicture() {
 
     return (
         <div>
-            <Sidebar values={ image } uploadImage={uploadImage} setImage={setImage}/>
+            
+               <h1>uploadProfilePic</h1>
+            <form onSubmit={uploadImage}>
+                <label>image</label>
+                <input type='file' name='image' onChange={e => setImage(e.target.files[0])} />
+                <button type='submit'>Save</button>
+            </form>
+            
         </div>
     )
 }

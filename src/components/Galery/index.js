@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
-import { NavBar, Profile } from './style';
 import api from '../../api/api.config';
+import { GaleryPic } from './style'
 
+export default function Galery() {
 
- function Sidebar(uploadImage, setImage) {
 
         const userId = localStorage.getItem('user')
         const [user, setUser] = useState([]);
@@ -26,25 +26,16 @@ import api from '../../api/api.config';
         };
 
 
-    return (
-      
-           <NavBar>
+        return(
+          <GaleryPic>
+                {user.pictures.map((pictures) => (
+                 <><Link to={`/pictures/${pictures._id}`} /><img src={pictures.url} alt={pictures.title} /></> 
 
+             ))}
 
-               <h1><Link to="/">myPic</Link></h1>
-               <Profile>
-                   <img src={user.profilePicture} alt=""/>
-                   <p>{user.username}</p>
-               </Profile>
-
-               
-            
-           </NavBar>
            
-           
-      
-    ) 
-}
+          </GaleryPic>
 
 
-export default Sidebar;
+        )
+    }

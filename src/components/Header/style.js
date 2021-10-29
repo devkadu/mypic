@@ -7,6 +7,7 @@ export const Nav = styled.div`
     justify-content: flex-end;
     align-items: center;
     padding-right: 5%;
+    
 
     a{
         text-decoration: none;
