@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import {FullPage, TextArea, Form } from './styles'
 
 
-const AuthForm = ({values, handleSubmit, handleChange, buttonlabel, loginmassage, signupmessage, linkmassage, type, error}) => {
+const AuthForm = ({ handleSubmit, handleChange, type, error, goiaba, text}) => {
     return (  
         <>
          <FullPage>
@@ -13,15 +13,17 @@ const AuthForm = ({values, handleSubmit, handleChange, buttonlabel, loginmassage
                  <p>suas fotos seguras e disponiveis em vários dispositivos sempre quando você precisar</p>
 
              </TextArea>
-             
-            <Form onSubmit ={handleSubmit}>
-                <h2>{loginmassage} or <Link to={signupmessage}> {linkmassage}</Link></h2>
-                
-               
-                <input type="text" name="username" placeholder='Username' value={values.username} onChange={handleChange}/>
 
-                <input type="text" name ="password" placeholder='Password' value={values.password} onChange={handleChange}/>
-            <button>{buttonlabel}</button>
+             
+             
+            <Form onSubmit ={handleSubmit}>  
+                <p>{text}<Link to={goiaba}> aqui</Link></p>
+                {error && <p>{error}</p> }              
+               
+                <input type="text" name="username" placeholder='Username' onChange={handleChange}/>
+                <input type="text" name ="password" placeholder='Password' onChange={handleChange}/>
+            <button type="submit">{type}</button>
+            
             </Form>
         </FullPage>
 

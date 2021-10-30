@@ -1,43 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import AuthForm from "../../components/authentication/AuthForm";
 import api from "../../api/api.config";
-import AuthForm from '../../components/authentication/AuthForm';
-import { useState } from "react";
 
-const INITIAL_FORM = {
+const INITIAL_FORM_VALUES = {
     username: "",
-    password: ""
-}
+    password: "",
+};
 
-const Login = (props) => {
-    const [ formValues, setFormValues ] = useState({...INITIAL_FORM})
+const Login = () => {
 
-    const handleChange = ({target: {name, value}}) => {
-        setFormValues({...formValues, [name]: value })
+    const [formValues, setFormValues] = useState({ ...INITIAL_FORM_VALUES });
+    const [error, setError] = useState("");
+
+    const handleInputChange = ({ target: { name, value } }) => {
+        setFormValues({ ...formValues, [name]: value });
     };
 
-    const handleSubmit = async (e) =>{
-        e.preventDefault()
+    const handleSubmit = async (e) => {
+        e.preventDefault();
         try {
-            const result = await api.post('auth/login', formValues);
-            console.log(result)
-            localStorage.setItem('token', result.data.token)
-            localStorage.setItem('user', result.data.user.id)
-            props.history.push('/')
-
-           
+            const response = await api.post("/auth/login", formValues);
+            localStorage.setItem('token', response.data.token)
+            localStorage.setItem('user', response.data.user.id)
+            setError('')
+            window.location = '/'
         } catch (error) {
-            console.error(error);
-            
+            console.error(error.response)
+            setError("Login falhou");
         }
+    };
 
-    }
-    return(
+    return (
         <div>
-            <AuthForm values= { formValues } handleSubmit={handleSubmit} handleChange={handleChange} buttonlabel='Log in' loginmassage='Login' signupmessage='/signup' linkmassage="create on account"/>
+            <AuthForm
+                handleChange={handleInputChange}
+                handleSubmit={handleSubmit}
+                type="Login"
+                text='Ainda não tem uma conta? Cadastre-se'
+                goiaba='/signup'
+            />
+            {error && (
+                <span
+                >
+                    {error}
+                </span>
+            )}
+            
         </div>
-
     );
-
-}
+};
 
 export default Login;

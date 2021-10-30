@@ -51,6 +51,25 @@ export const Profile = styled.div`
 export const Buttons = styled.div`
     display: flex;
     margin-top: -80%;
-    
 
+   
+
+`;
+
+export const Logout = styled.div`
+    position: absolute;
+    top: 90%;
+    display: flex;
+    padding: 2%;
+    justify-content: center;
+    align-items: center;
+    a{
+        margin-left: 8px ;
+    }
+
+    svg{
+        color: white;
+    }
+    
+    
 `;

@@ -9,7 +9,7 @@ function List({ user, fallback }) {
       return fallback;
     } else {
       return user.pictures.map(item => {
-        return <div key={item.id}><img src={item.url} alt={item.title}/></div>;
+        return <div key={item.id}><Link to ={`/picture/${item._id}`}> <img src={item.url} alt={item.title}/></Link></div>;
       });
     }
   }

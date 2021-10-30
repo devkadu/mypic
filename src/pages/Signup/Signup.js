@@ -1,50 +1,41 @@
-import React, { useState } from 'react';
-import { useHistory } from 'react-router';
-import api from '../../api/api.config';
-import AuthForm from '../../components/authentication/AuthForm';
+import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
+import AuthForm from '../../components/authentication/AuthForm'
+import api from "../../api/api.config"
 
-
-
-const INITIAL_FORM = {
+const INITIAL_FORM_VALUES = {
     username: "",
-    password: ""
-}
+    password: "",
+};
 
+const Signup = () => {
+    const [formValues, setFormValues] = useState({ ...INITIAL_FORM_VALUES });
+    const [error, setError] = useState('');
+    const history = useHistory()
 
-const Signup = () =>{
-
-    
-    const [ formValues, setFormValues ] = useState({...INITIAL_FORM})
-
-    const history =useHistory()
-
-    const handleChange = ({target: {name, value}}) => {
-        setFormValues({...formValues, [name]: value })
+    const handleInputChange = ({ target: { name, value } }) => {
+        setFormValues({ ...formValues, [name]: value });
     };
 
-    const handleSubmit = async (e) =>{
+    const handleSubmit = async(e) => {
         e.preventDefault()
         try {
-           await api.post('/auth/signup', formValues)
-           history.push('/login')
+            await api.post('/auth/signup', formValues)
+            history.push('/login')
         } catch (error) {
-            console.error(error)
-            
+            setError('Signup falhou')
         }
-
     }
 
-
-    return(
-       <div>
-           <AuthForm values= { formValues } handleSubmit={handleSubmit} handleChange={handleChange} buttonlabel='Sign up' loginmassage='Create an acconut' signupmessage='/login' linkmassage='Login'/>
-       </div>
-
-    )
-
-}
+    return (
+        <div>
+            <AuthForm handleChange={handleInputChange} handleSubmit={handleSubmit} type='Signup' text={'Já tem conta? Entre'} goiaba={'/login'}/>
+            <p>Já tem conta? Entre <Link to='/login'> aqui</Link></p>
+            {error && <span>{error}</span> }
+            
+        </div>
+    );
+};
 
 export default Signup;
-
-
-

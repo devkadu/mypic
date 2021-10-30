@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { NavBar, Profile, Buttons } from './style';
+import { NavBar, Profile, Buttons, Logout } from './style';
 import api from '../../api/api.config';
 import UploadPicture from '../Upload/UploadPicture';
 import UploadProfilePic from '../Upload/UploadProfilePic';
+import {BiLogOut} from 'react-icons/bi'
 
 
- function Sidebar(uploadImage, setImage) {
+ function Sidebar() {
 
         const userId = localStorage.getItem('user')
         const [user, setUser] = useState([]);
@@ -21,7 +22,7 @@ import UploadProfilePic from '../Upload/UploadProfilePic';
             try {
                 const result = await api.get(`/user/${userId}`);
                 setUser(result.data);
-                console.log(result)
+                
             } catch (error) {
                 console.error(error.response);
             }
@@ -42,7 +43,9 @@ import UploadProfilePic from '../Upload/UploadProfilePic';
                <UploadPicture/>
                <UploadProfilePic/>
                </Buttons>
-               
+               <Logout>
+               <BiLogOut/><Link to='/logout'>Log out</Link>
+               </Logout>
             
            </NavBar>
            
