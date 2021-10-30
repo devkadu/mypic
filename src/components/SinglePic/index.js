@@ -43,34 +43,35 @@ import { SingleGallery } from "./style"
 
 
     return (
+        
         <SingleGallery>
+            
 
             {loading ? (
                 <div>
-                    <span class="visually-hidden">Loading...</span>
+                    <span>Loading...</span>
                 </div>
             ) : (
                 <div>
+                   
                     <div>
                         <h2>{picture.title}</h2>
                         <img  src={picture.url} alt={picture.title} />
                     </div>
-                    
-        
-            
-
                     <div>
-                        <h6>Reviews:</h6>
+                    
+                        <h6>Comentários:</h6>
                         {picture.comment && picture.comment.map((comment) => (
                             <div key={comment._id}>
                                 <h5>{comment.comment}</h5>
                             </div>
+                            
                         ))}
                         {showForm ? (
                             <CommentsForm
                                 toggleForm={toggleForm}
                                 goiaba={id}
-                                updateReviews={updateComment}
+                                uupdateComment={updateComment}
                             />
                         ) : (
                             
@@ -80,17 +81,13 @@ import { SingleGallery } from "./style"
                             >
                                 Comentar
                             </button>
+                            
                         )}
-
                     </div>
                     </div>
-                
             )}
-
-
-
-        </SingleGallery>
-    );
+        </SingleGallery>      
+);
 };
 
 export default SinglePic

@@ -50,8 +50,18 @@ export const Profile = styled.div`
 
 export const Buttons = styled.div`
     display: flex;
+    flex-direction: column;
     margin-top: -80%;
-
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    
+    a{
+        background-color: #787CBC;
+        border-radius: 5px;
+        padding: 5px;
+        margin-top: 10px;
+    }
    
 
 `;

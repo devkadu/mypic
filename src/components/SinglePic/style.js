@@ -9,8 +9,8 @@ margin: 8% 0% 0% 30%;
 display: flex;
 
 img{
-    width: 50%;
-       height: 115%;
+    width: 100%;
+       height: 400px;
        border-radius: 5px;
        object-fit: cover;
 }
@@ -44,11 +44,14 @@ input{
 }
 
 button{
-    width: 47%;
+    width: 30%;
+    background-color: #2E3D80;
+    color: white;
+    border-radius: 4px;
     height: 10%;
     position: absolute;
     top: 59%;
-    left: 53%;
+    left: 70%;
 
 }
 

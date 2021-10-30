@@ -12,7 +12,7 @@ const CommentsForm = ({ toggleForm, goiaba, updateComment}) => {
             console.log(result)
             updateComment(result.data)
             setComment('')
-        } catch (error) {
+          } catch (error) {
             console.error(error.response)
             setError(error.response.data.message)
         }
@@ -33,7 +33,7 @@ const CommentsForm = ({ toggleForm, goiaba, updateComment}) => {
                     Enviar
                 </button>
             </div>
-            {error && (<p className='badge bg-danger mt-5'>{error}</p>)}
+            {error && (<p>{error}</p>)}
         </form>
     );
 };

@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { NavBar, Profile, Buttons, Logout } from './style';
 import api from '../../api/api.config';
-import UploadPicture from '../Upload/UploadPicture';
-import UploadProfilePic from '../Upload/UploadProfilePic';
 import {BiLogOut} from 'react-icons/bi'
 
 
@@ -40,8 +38,9 @@ import {BiLogOut} from 'react-icons/bi'
                    <p>{user.username}</p>
                </Profile>
                <Buttons>
-               <UploadPicture/>
-               <UploadProfilePic/>
+               
+               <Link to='/UploadPicture'>New Image</Link>
+               <Link to='/UploadProfilepic'>Change Profile Pic</Link>
                </Buttons>
                <Logout>
                <BiLogOut/><Link to='/logout'>Log out</Link>
