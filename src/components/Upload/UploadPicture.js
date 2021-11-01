@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import styled from 'styled-components';
+import React, { useState } from 'react';
 import api from '../../api/api.config';
 import { UploadPic } from './style';
 import {Full} from '../../pages/home/styles';

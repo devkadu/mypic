@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import AuthForm from "../../components/authentication/AuthForm";
 import api from "../../api/api.config";
 
