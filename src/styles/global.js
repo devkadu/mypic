@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-import px2vw from "../utils/px2vw";
 
 export const Global = createGlobalStyle`
   * {
@@ -9,17 +8,12 @@ export const Global = createGlobalStyle`
     font-family: 'Poppins', sans-serif;
   }
  
-  :root {
-      font-size: ${px2vw(24)};
-
-      @media (min-width: 768px) {
-        font-size: ${px2vw(18)};
-      }
-
-      @media (min-width: 1024px) {
-        font-size: ${px2vw(16)};
-      }
-    }
+  html{
+    font-size: 62.5%;
+  }
+  body{
+    font-size: 1.6rem;
+  }
 `;
 
 export default Global;

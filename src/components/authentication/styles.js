@@ -1,16 +1,13 @@
 import styled from "styled-components";
 
 export const FullPage = styled.div`
-
    width: 100vw;
    height: 100vh;
    background-color: #2E3D80;
    display: flex;
    justify-content: space-between;
    align-items: center;
-
    
-
 `;
 
 export const TextArea = styled.div`
@@ -21,7 +18,6 @@ export const TextArea = styled.div`
     width: 90vh;
     margin: 1px 1px 0px 50px;
     
-
     h1{
         margin-bottom: 50px;
     }
@@ -30,19 +26,13 @@ export const TextArea = styled.div`
         font-weight: 700;
         line-height: 11vh;
         padding-top: 55px;
-
     }
-
     p{
         font-size: 4vh;
         padding-top: 25px;
         font-weight: 200;
-
       
     }
-
-
-
 `;
 
 export const Form = styled.form`
@@ -58,7 +48,6 @@ export const Form = styled.form`
     align-content: center;
     color: black;
     border-radius: 20px;
-
     h2{
         margin-bottom: 10%;
     }
@@ -76,7 +65,6 @@ export const Form = styled.form`
     input[type="text"]::placeholder{
       padding-left: 20px;
     }
-
     button{
         margin-top: 15px;
         border-radius: 7px;
@@ -88,6 +76,4 @@ export const Form = styled.form`
         color: white;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
-
 `;
-
